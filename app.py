@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import google.generativeai as genai
 
+
+load_dotenv(dotenv_path="blabla")
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
@@ -40,4 +44,4 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-bot.run('MTI4Njk5NzgwNzAwOTM2NjA5MA.GkzJSr.JiaSAkSMtW6juF_Qu8Oq-4JLKm4sMa82LTAO6k')
+bot.run(os.getenv("TOKEN"))
